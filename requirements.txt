@@ -1,3 +1,1 @@
-math
-datetime
-dateparser
+dateparser==1.1.1
