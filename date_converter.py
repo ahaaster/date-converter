@@ -1,6 +1,6 @@
 import math
 import datetime
-import dateparser
+from dateparser import parse
 
 DateTypes = str | int | float | datetime.date
 TIMESTAMP_DIGITS = 10
@@ -62,7 +62,7 @@ def date_to(your_date: DateTypes, end_type: str) -> DateTypes:
 def _to_datetime(_time: DateTypes) -> datetime.date:
     if not isinstance(_time, (int, float)):
         if isinstance(_time, str):
-            _time = dateparser.parse(_time, settings=PARSER_SETTINGS)
+            _time = parse(_time, settings=PARSER_SETTINGS)
         _time = _date_time_to_timestamp(_time)
     return datetime.datetime.fromtimestamp(_time, tz=datetime.timezone.utc)
 
