@@ -11,7 +11,7 @@ PARSER_SETTINGS = {
 }
 
 
-def date_to(your_date: DateTypes, end_type: str) -> DateTypes:
+def date_to(your_date: DateTypes, end_type: DateTypes) -> DateTypes:
     """
 
     :param your_date: Requires to be either int, float, str, or datetime.date
